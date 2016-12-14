@@ -50,8 +50,8 @@ public class NubeCraft {
 					frame.add(label);
 					if (w/280>i)
 						i++;
-					final int x = i+280<w ? i+280 : 0;
-					final int y = i+150<h ? i+150 : i/l;
+					final int x = i+280<w-280 ? i+280 : 0;
+					final int y = i+150<h-150 ? i+150 : i/l;
 					frame.setBounds(new Rectangle(x, y, 280, 150));
 					frame.setVisible(true);
 					i++;
