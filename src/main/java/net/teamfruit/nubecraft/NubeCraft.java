@@ -40,29 +40,30 @@ public class NubeCraft {
 		w = screenSize.width;
 		h = screenSize.height;
 		l = w/280;
-		new Thread() {
-			@Override
-			public void run() {
-				while (true) {
-					final JFrame frame = new JFrame("ヌベヂョンですか？");
-					final JLabel label = new JLabel("└(՞ةڼ◔)」");
-					label.setFont(new Font("Serif", Font.PLAIN, 64));
-					frame.add(label);
-					if (w/280>i)
+		for (int ii = 0; ii<50; ii++)
+			new Thread() {
+				@Override
+				public void run() {
+					while (true) {
+						final JFrame frame = new JFrame("ヌベヂョンですか？");
+						final JLabel label = new JLabel("└(՞ةڼ◔)」");
+						label.setFont(new Font("Serif", Font.PLAIN, 64));
+						frame.add(label);
+						if (w/280>i)
+							i++;
+						final int x = i+280<w-280 ? i+280 : 0;
+						final int y = i+150<h-150 ? i+150 : i/l;
+						frame.setBounds(new Rectangle(x, y, 280, 150));
+						frame.setVisible(true);
 						i++;
-					final int x = i+280<w-280 ? i+280 : 0;
-					final int y = i+150<h-150 ? i+150 : i/l;
-					frame.setBounds(new Rectangle(x, y, 280, 150));
-					frame.setVisible(true);
-					i++;
-					try {
-						sleep(10);
-					} catch (final InterruptedException e) {
-						throw new RuntimeException("ヌベヂョンヌゾジョンベルミッティスモゲロンボョｗｗｗｗ");
+						try {
+							sleep(10);
+						} catch (final InterruptedException e) {
+							throw new RuntimeException("ヌベヂョンヌゾジョンベルミッティスモゲロンボョｗｗｗｗ");
+						}
 					}
 				}
-			}
-		}.start();
+			}.start();
 	}
 
 	@EventHandler
